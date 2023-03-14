@@ -119,4 +119,36 @@ The above model will only be able to achieve one of the two goals:
 
 After identifying important predictors, display them visually - we can use plots, summary tables etc. - whatever we think best conveys the importance of features.
 
-Finally, Business strategies are recommended to manage customer churn based on our observations from the historical data.
+# Business Recommendations
+The top variables chosen for the logistic regression model are listed below. 
+
+| Variables   | Coefficients |
+|---------------------|--------------|
+|loc_ic_mou_8|-3.3287|
+|og_others_7|-2.4711|
+|ic_others_8|-1.5131|
+|isd_og_mou_8|-1.3811|
+|decrease_vbc_action|-1.3293|
+|monthly_3g_8|-1.0943|
+|std_ic_t2f_mou_8|-0.9503|
+|monthly_2g_8|-0.9279|
+|loc_ic_t2f_mou_8|-0.7102|
+|roam_og_mou_8|0.7135|
+
+* The majority of the top variables, as can be seen, have negative coefficients.
+This indicates that the factors and the probability of churn have an inverse relationship.
+
+<br>
+E.g : -
+<br>
+The likelihood that a client will leave increases if their local inbound minutes of usage (loc ic mou 8) are lower in August than in any other month.
+
+**`Recommendations`**
+1. Focus on clients who use fewer minutes for inbound local calls and outgoing ISD calls during the action phase (mostly in the month of August).
+2. Pay special attention to the clients who pay more in July than they do in August.
+3. In addition, clients that experience increasing value-based costs throughout the action phase are more likely to leave than other customers. So, making an offer to these customers may be a good idea.
+4. Customers have a greater chance to be churned if their monthly 3G recharge is higher in August.
+5. Customers who used fewer STD incoming minutes on fixed T lines from operators T in August are more likely to churn.
+6. Customers who use less 2G data each month in August are more likely to churn.
+7. Consumers who used less incoming minutes on fixed T lines from operators in August are more likely to leave.
+8. Variables in roam_og_mou_8 have positive coefficients (0.7135). That means for the clients, whose roaming outbound minutes of consumption is increasing are more likely to churn.
